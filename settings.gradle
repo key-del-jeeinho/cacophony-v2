@@ -1,0 +1,6 @@
+rootProject.name = 'cacophony-v2'
+include 'library'
+include 'example'
+include 'spring-boot-starter'
+include 'spring-auto-configure'
+
