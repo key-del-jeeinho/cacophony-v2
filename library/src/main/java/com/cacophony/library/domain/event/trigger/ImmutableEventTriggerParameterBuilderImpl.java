@@ -1,6 +1,6 @@
-package com.cacophony.library.event.trigger;
+package com.cacophony.library.domain.event.trigger;
 
-import com.cacophony.library.event.event.Event;
+import com.cacophony.library.global.events.Event;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;

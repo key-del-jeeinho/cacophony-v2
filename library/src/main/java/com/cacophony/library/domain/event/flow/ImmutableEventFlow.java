@@ -1,4 +1,4 @@
-package com.cacophony.library.event.flow;
+package com.cacophony.library.domain.event.flow;
 
 import com.cacophony.library.global.action.Action;
 import com.cacophony.library.global.flow.FlowRequest;

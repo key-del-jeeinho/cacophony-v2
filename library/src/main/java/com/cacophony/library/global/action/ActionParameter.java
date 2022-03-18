@@ -1,6 +1,6 @@
 package com.cacophony.library.global.action;
 
-import com.cacophony.library.global.Parameter;
+import com.cacophony.library.global.common.Parameter;
 
 public interface ActionParameter extends Parameter {
     @Override

@@ -1,4 +1,4 @@
-package com.cacophony.library.event.trigger;
+package com.cacophony.library.domain.event.trigger;
 
 import com.cacophony.library.global.trigger.Trigger;
 

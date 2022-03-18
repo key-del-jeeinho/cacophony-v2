@@ -1,6 +1,6 @@
-package com.cacophony.library.event.trigger;
+package com.cacophony.library.domain.event.trigger;
 
-import com.cacophony.library.exception.CacophonyAccessException;
+import com.cacophony.library.global.common.exception.CacophonyAccessException;
 
 import java.util.Collections;
 import java.util.Map;
