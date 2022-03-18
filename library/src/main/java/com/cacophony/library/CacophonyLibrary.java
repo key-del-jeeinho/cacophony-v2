@@ -1,8 +1,8 @@
 package com.cacophony.library;
 
-import com.cacophony.library.rule.action.ActionGenerator;
-import com.cacophony.library.rule.flow.FlowGenerator;
-import com.cacophony.library.rule.trigger.TriggerGenerator;
+import com.cacophony.library.global.action.ActionGenerator;
+import com.cacophony.library.global.flow.FlowGenerator;
+import com.cacophony.library.global.trigger.TriggerGenerator;
 
 public class CacophonyLibrary {
     private static ActionGenerator actionGenerator;

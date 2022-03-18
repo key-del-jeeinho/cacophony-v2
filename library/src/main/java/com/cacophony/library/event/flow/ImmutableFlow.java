@@ -1,11 +1,13 @@
-package com.cacophony.library.rule.flow;
+package com.cacophony.library.event.flow;
 
-import com.cacophony.library.rule.action.Action;
-import com.cacophony.library.rule.trigger.Trigger;
+import com.cacophony.library.global.flow.Flow;
+import com.cacophony.library.global.flow.FlowRequest;
+import com.cacophony.library.global.action.Action;
+import com.cacophony.library.global.trigger.Trigger;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class ImmutableFlow implements Flow{
+public class ImmutableFlow implements Flow {
     private final Trigger trigger;
     private final Action action;
 

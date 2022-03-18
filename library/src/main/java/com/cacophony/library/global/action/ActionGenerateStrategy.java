@@ -1,4 +1,4 @@
-package com.cacophony.library.rule.action;
+package com.cacophony.library.global.action;
 
 import com.cacophony.library.global.GenerateStrategy;
 

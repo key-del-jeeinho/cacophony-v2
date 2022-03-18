@@ -1,4 +1,4 @@
-package com.cacophony.library.rule.trigger;
+package com.cacophony.library.global.trigger;
 
 import com.cacophony.library.global.GenerateStrategy;
 import com.cacophony.library.global.SimpleGenerator;

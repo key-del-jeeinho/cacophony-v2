@@ -1,4 +1,4 @@
-package com.cacophony.library.rule.trigger;
+package com.cacophony.library.global.trigger;
 
 public interface Trigger {
     void execute(TriggerParameter parameter);
