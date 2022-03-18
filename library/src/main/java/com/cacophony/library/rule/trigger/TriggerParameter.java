@@ -1,9 +1,6 @@
 package com.cacophony.library.rule.trigger;
 
-public interface TriggerParameter {
-    default Object getParameter(Integer index) {
-        return getParameter(index, Object.class);
-    }
+import com.cacophony.library.global.Parameter;
 
-    <T> T getParameter(Integer index, Class<T> clazz);
+public interface TriggerParameter extends Parameter {
 }
