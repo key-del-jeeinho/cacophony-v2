@@ -21,7 +21,7 @@ public abstract class EventTriggerParameter implements TriggerParameter {
         this.params = params;
     }
 
-    public static interface EventTriggerParameterBuilder extends TriggerParameterBuilder {
+    public interface EventTriggerParameterBuilder extends TriggerParameterBuilder {
         EventTriggerParameterBuilder event(Event event);
         EventTriggerParameterBuilder publishedAt(LocalDateTime publishedAt);
 

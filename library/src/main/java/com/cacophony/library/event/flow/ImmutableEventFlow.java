@@ -1,32 +1,31 @@
 package com.cacophony.library.event.flow;
 
-import com.cacophony.library.global.flow.Flow;
-import com.cacophony.library.global.flow.FlowRequest;
 import com.cacophony.library.global.action.Action;
+import com.cacophony.library.global.flow.FlowRequest;
 import com.cacophony.library.global.trigger.Trigger;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class ImmutableFlow implements Flow {
+public class ImmutableEventFlow implements EventFlow {
     private final Trigger trigger;
     private final Action action;
 
-    public ImmutableFlow() {
+    public ImmutableEventFlow() {
         this(null, null);
     }
 
     @Override
-    public Flow when(Trigger trigger) {
-        return new ImmutableFlow(trigger, this.action);
+    public EventFlow when(Trigger trigger) {
+        return new ImmutableEventFlow(trigger, this.action);
     }
 
     @Override
-    public Flow doAction(Action action) {
-        return new ImmutableFlow(this.trigger, action);
+    public EventFlow doAction(Action action) {
+        return new ImmutableEventFlow(this.trigger, action);
     }
 
     @Override
-    public Flow complete() {
+    public EventFlow complete() {
         //TODO Flow 등록로직 작성
         return null;
     }
