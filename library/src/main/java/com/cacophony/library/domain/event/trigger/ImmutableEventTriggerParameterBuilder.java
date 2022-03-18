@@ -9,22 +9,22 @@ import java.util.Map;
 import java.util.Objects;
 
 @RequiredArgsConstructor
-public class ImmutableEventTriggerParameterBuilderImpl implements EventTriggerParameter.EventTriggerParameterBuilder {
+public class ImmutableEventTriggerParameterBuilder implements EventTriggerParameter.EventTriggerParameterBuilder {
     private final Event event;
     private final LocalDateTime publishedAt;
 
-    public ImmutableEventTriggerParameterBuilderImpl() {
+    public ImmutableEventTriggerParameterBuilder() {
         this(null, null);
     }
 
     @Override
     public EventTriggerParameter.EventTriggerParameterBuilder event(Event event) {
-        return new ImmutableEventTriggerParameterBuilderImpl(event, this.publishedAt);
+        return new ImmutableEventTriggerParameterBuilder(event, this.publishedAt);
     }
 
     @Override
     public EventTriggerParameter.EventTriggerParameterBuilder publishedAt(LocalDateTime publishedAt) {
-        return new ImmutableEventTriggerParameterBuilderImpl(this.event, publishedAt);
+        return new ImmutableEventTriggerParameterBuilder(this.event, publishedAt);
     }
 
     @Override
