@@ -10,8 +10,10 @@ import lombok.RequiredArgsConstructor;
 public abstract class Flow {
     private final Trigger trigger;
     private final Action action;
-    
+
     public abstract Flow when(Trigger trigger);
     public abstract Flow doAction(Action action);
     public abstract Flow complete();
+
+    public abstract void execute(FlowRequest e);
 }
