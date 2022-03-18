@@ -5,4 +5,10 @@ public interface Parameter {
     default Object getParameter(Integer index) {
         return getParameter(index, Object.class);
     }
+
+    ParameterBuilder builder();
+
+    interface ParameterBuilder {
+        Parameter build();
+    }
 }

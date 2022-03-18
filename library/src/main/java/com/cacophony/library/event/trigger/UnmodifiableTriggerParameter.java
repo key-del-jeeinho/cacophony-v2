@@ -5,13 +5,18 @@ import com.cacophony.library.exception.CacophonyAccessException;
 import java.util.Collections;
 import java.util.Map;
 
-public class UnmodifiableTriggerParameter extends ImmutableEventTriggerParameter {
+public class UnmodifiableTriggerParameter extends EventTriggerParameter {
     public UnmodifiableTriggerParameter(Map<Integer, Object> params) {
         super(Collections.unmodifiableMap(params));
     }
 
     @Override
-    public ParameterBuilder builder() {
+    public EventTriggerParameterBuilder builder() {
         throw new CacophonyAccessException("해당 파라미터는 builder 를 통해 수정할 수 없습니다!");
+    }
+
+    @Override
+    public <T> T getParameter(Integer index, Class<T> clazz) {
+        return null;
     }
 }
