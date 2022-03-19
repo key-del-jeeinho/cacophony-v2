@@ -10,7 +10,7 @@ import java.util.Map;
 public abstract class EventActionParameter implements ActionParameter {
     private Map<Integer, Object> params;
 
-    public abstract EventActionParameter.EventActionParameterBuilder builder();
+    public abstract EventActionParameterBuilder builder();
 
     //non-public Getters and Setters
     protected Map<Integer, Object> getParams() {
