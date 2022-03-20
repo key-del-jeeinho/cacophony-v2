@@ -1,5 +1,7 @@
 package com.cacophony.library.domain.event.flow;
 
+import com.cacophony.library.domain.event.action.EventAction;
+import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.global.action.Action;
 import com.cacophony.library.global.flow.FlowRequest;
 import com.cacophony.library.global.flow.exception.UnmodifiableFlowException;
@@ -8,22 +10,12 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class UnmodifiableEventFlow implements EventFlow {
-    private final Trigger trigger;
-    private final Action action;
+    private final EventTrigger trigger;
+    private final EventAction action;
 
     @Override
-    public EventFlow when(Trigger trigger) {
-        throw new UnmodifiableFlowException("해당 플로우의 trigger 는 수정할 수 없습니다!");
-    }
-
-    @Override
-    public EventFlow doAction(Action action) {
-        throw new UnmodifiableFlowException("해당 플로우의 action 은 수정할 수 없습니다!");
-    }
-
-    @Override
-    public EventFlow complete() {
-        throw new UnmodifiableFlowException("해당 플로우는 이미 complete되었습니다!");
+    public EventFlowBuilder builder() {
+        throw new UnmodifiableFlowException("해당 Flow 는 builder 로 수정할 수 없습니다!");
     }
 
     @Override

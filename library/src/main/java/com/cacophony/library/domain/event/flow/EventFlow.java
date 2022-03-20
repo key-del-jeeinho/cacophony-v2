@@ -6,11 +6,16 @@ import com.cacophony.library.global.trigger.Trigger;
 
 public interface EventFlow extends Flow {
     @Override
-    EventFlow when(Trigger trigger);
+    EventFlowBuilder builder();
 
-    @Override
-    EventFlow doAction(Action action);
+    interface EventFlowBuilder extends Flow.FlowBuilder {
+        @Override
+        EventFlowBuilder when(Trigger trigger);
 
-    @Override
-    EventFlow complete();
+        @Override
+        EventFlowBuilder doAction(Action action);
+
+        @Override
+        EventFlow complete();
+    }
 }

@@ -4,9 +4,13 @@ import com.cacophony.library.global.action.Action;
 import com.cacophony.library.global.trigger.Trigger;
 
 public interface Flow {
-    Flow when(Trigger trigger);
-    Flow doAction(Action action);
-    Flow complete();
+    FlowBuilder builder();
 
     void execute(FlowRequest e);
+
+    interface FlowBuilder {
+        FlowBuilder when(Trigger trigger);
+        FlowBuilder doAction(Action action);
+        Flow complete();
+    }
 }
