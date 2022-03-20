@@ -1,6 +1,6 @@
-package com.cacophony.library.domain.event.action;
+package com.cacophony.library.domain.event.action.parameter;
 
-import com.cacophony.library.global.common.exception.CacophonyAccessException;
+import com.cacophony.library.global.action.exception.UnmodifiableActionParameterException;
 
 import java.util.Collections;
 import java.util.Map;
@@ -17,6 +17,6 @@ public class UnmodifiableActionParameter extends EventActionParameter {
 
     @Override
     public EventActionParameterBuilder builder() {
-        throw new CacophonyAccessException("해당 파라미터는 builder 를 통해 수정할 수 없습니다!");
+        throw new UnmodifiableActionParameterException("해당 파라미터는 builder 를 통해 수정할 수 없습니다!");
     }
 }

@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.action;
+package com.cacophony.library.domain.event.action.parameter;
 
 import java.util.Map;
 

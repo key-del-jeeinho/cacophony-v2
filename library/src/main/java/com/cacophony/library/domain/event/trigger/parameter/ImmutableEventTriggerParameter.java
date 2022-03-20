@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.trigger;
+package com.cacophony.library.domain.event.trigger.parameter;
 
 import java.util.Map;
 

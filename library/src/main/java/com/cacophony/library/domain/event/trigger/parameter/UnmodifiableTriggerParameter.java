@@ -1,6 +1,6 @@
-package com.cacophony.library.domain.event.trigger;
+package com.cacophony.library.domain.event.trigger.parameter;
 
-import com.cacophony.library.global.common.exception.CacophonyAccessException;
+import com.cacophony.library.global.trigger.exception.UnmodifiableTriggerParameterException;
 
 import java.util.Collections;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class UnmodifiableTriggerParameter extends EventTriggerParameter {
 
     @Override
     public EventTriggerParameterBuilder builder() {
-        throw new CacophonyAccessException("해당 파라미터는 builder 를 통해 수정할 수 없습니다!");
+        throw new UnmodifiableTriggerParameterException("해당 파라미터는 builder 를 통해 수정할 수 없습니다!");
     }
 
     @Override
