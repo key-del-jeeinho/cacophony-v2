@@ -19,7 +19,7 @@ public class UnmodifiableEventFlow implements EventFlow {
     }
 
     @Override
-    public void execute(FlowRequest e) {
+    public void execute(EventFlowRequest e) {
         if(trigger.check(e.toTriggerParameter())) action.execute(e.toActionParameter());
     }
 }

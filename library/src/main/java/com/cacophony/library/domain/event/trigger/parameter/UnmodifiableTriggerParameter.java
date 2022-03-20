@@ -5,9 +5,11 @@ import com.cacophony.library.global.trigger.exception.UnmodifiableTriggerParamet
 import java.util.Collections;
 import java.util.Map;
 
-public class UnmodifiableTriggerParameter extends EventTriggerParameter {
+public class UnmodifiableTriggerParameter implements EventTriggerParameter {
+    private final Map<Integer, Object> params;
+
     public UnmodifiableTriggerParameter(Map<Integer, Object> params) {
-        super(Collections.unmodifiableMap(params));
+        this.params = Collections.unmodifiableMap(params);
     }
 
     @Override
@@ -17,6 +19,6 @@ public class UnmodifiableTriggerParameter extends EventTriggerParameter {
 
     @Override
     public <T> T getParameter(Integer index, Class<T> clazz) {
-        return null;
+        return clazz.cast(params.get(index));
     }
 }

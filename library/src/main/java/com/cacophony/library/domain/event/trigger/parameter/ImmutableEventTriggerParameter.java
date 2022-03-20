@@ -1,15 +1,16 @@
 package com.cacophony.library.domain.event.trigger.parameter;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.Map;
 
-public class ImmutableEventTriggerParameter extends EventTriggerParameter {
-    public ImmutableEventTriggerParameter(Map<Integer, Object> params) {
-        super(params);
-    }
+@RequiredArgsConstructor
+public class ImmutableEventTriggerParameter implements EventTriggerParameter {
+    private final Map<Integer, Object> params;
 
     @Override
     public <T> T getParameter(Integer index, Class<T> clazz) {
-        return clazz.cast(getParams().get(index));
+        return clazz.cast(params.get(index));
     }
 
     @Override

@@ -16,13 +16,13 @@ public class ImmutableEventFlowBuilder implements EventFlow.EventFlowBuilder {
     }
 
     @Override
-    public EventFlow.EventFlowBuilder when(Trigger trigger) {
-        return new ImmutableEventFlowBuilder((EventTrigger) trigger, this.action);
+    public EventFlow.EventFlowBuilder when(EventTrigger trigger) {
+        return new ImmutableEventFlowBuilder(trigger, this.action);
     }
 
     @Override
-    public EventFlow.EventFlowBuilder doAction(Action action) {
-        return new ImmutableEventFlowBuilder(this.trigger, (EventAction) action);
+    public EventFlow.EventFlowBuilder doAction(EventAction action) {
+        return new ImmutableEventFlowBuilder(this.trigger, action);
     }
 
     @Override

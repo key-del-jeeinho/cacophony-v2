@@ -2,26 +2,13 @@ package com.cacophony.library.domain.event.trigger.parameter;
 
 import com.cacophony.library.global.events.Event;
 import com.cacophony.library.global.trigger.TriggerParameter;
-import lombok.AllArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 
-@AllArgsConstructor
-public abstract class EventTriggerParameter implements TriggerParameter {
-    private Map<Integer, Object> params;
+public interface EventTriggerParameter extends TriggerParameter<EventTriggerParameter.EventTriggerParameterBuilder> {
+    EventTriggerParameterBuilder builder();
 
-    public abstract EventTriggerParameterBuilder builder();
-
-    //non-public Getters and Setters
-    protected Map<Integer, Object> getParams() {
-        return params;
-    }
-    protected void setParams(Map<Integer, Object> params) {
-        this.params = params;
-    }
-
-    public interface EventTriggerParameterBuilder extends TriggerParameterBuilder {
+    interface EventTriggerParameterBuilder extends TriggerParameter.TriggerParameterBuilder {
         EventTriggerParameterBuilder event(Event event);
         EventTriggerParameterBuilder publishedAt(LocalDateTime publishedAt);
 

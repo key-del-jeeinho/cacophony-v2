@@ -5,14 +5,16 @@ import com.cacophony.library.global.action.exception.UnmodifiableActionParameter
 import java.util.Collections;
 import java.util.Map;
 
-public class UnmodifiableActionParameter extends EventActionParameter {
+public class UnmodifiableActionParameter implements EventActionParameter {
+    private final Map<Integer, Object> params;
+
     public UnmodifiableActionParameter(Map<Integer, Object> params) {
-        super(Collections.unmodifiableMap(params));
+        this.params = Collections.unmodifiableMap(params);
     }
 
     @Override
     public <T> T getParameter(Integer index, Class<T> clazz) {
-        return clazz.cast(getParams().get(index));
+        return clazz.cast(params.get(index));
     }
 
     @Override

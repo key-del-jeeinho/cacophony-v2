@@ -1,14 +1,14 @@
 package com.cacophony.library.global.common;
 
-public interface Parameter {
+public interface Parameter<B extends Parameter.ParameterBuilder> {
     <T> T getParameter(Integer index, Class<T> clazz);
     default Object getParameter(Integer index) {
         return getParameter(index, Object.class);
     }
 
-    ParameterBuilder builder();
+    B builder();
 
     interface ParameterBuilder {
-        Parameter build();
+        Parameter<?> build();
     }
 }
