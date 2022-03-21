@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.configuration;
+package com.cacophony.library.domain.event.common;
 
 import com.cacophony.library.domain.event.action.EventActionGenerator;
 import com.cacophony.library.domain.event.action.ImmutableEventAction;

@@ -6,9 +6,9 @@ import java.util.Collections;
 import java.util.Map;
 
 public class UnmodifiableTriggerParameter implements EventTriggerParameter {
-    private final Map<Integer, Object> params;
+    private final Map<String, Object> params;
 
-    public UnmodifiableTriggerParameter(Map<Integer, Object> params) {
+    public UnmodifiableTriggerParameter(Map<String, Object> params) {
         this.params = Collections.unmodifiableMap(params);
     }
 
@@ -18,7 +18,7 @@ public class UnmodifiableTriggerParameter implements EventTriggerParameter {
     }
 
     @Override
-    public <T> T getParameter(Integer index, Class<T> clazz) {
+    public <T> T getParameter(String index, Class<T> clazz) {
         return clazz.cast(params.get(index));
     }
 }

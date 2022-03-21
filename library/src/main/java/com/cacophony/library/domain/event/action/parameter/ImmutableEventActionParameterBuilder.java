@@ -24,8 +24,8 @@ public class ImmutableEventActionParameterBuilder implements EventActionParamete
     public EventActionParameter build() {
         Objects.requireNonNull(event);
 
-        final Map<Integer, Object> params = new HashMap<>();
-        params.put(0, event);
+        final Map<String, Object> params = new HashMap<>();
+        params.put("event", event);
         return new UnmodifiableActionParameter(params);
     }
 }
