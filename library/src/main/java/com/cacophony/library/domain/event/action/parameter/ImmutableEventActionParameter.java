@@ -8,6 +8,10 @@ import java.util.Map;
 public class ImmutableEventActionParameter implements EventActionParameter{
     private final Map<Integer, Object> params;
 
+    public ImmutableEventActionParameter() {
+        this(null);
+    }
+
     @Override
     public <T> T getParameter(Integer index, Class<T> clazz) {
         return clazz.cast(params.get(index));

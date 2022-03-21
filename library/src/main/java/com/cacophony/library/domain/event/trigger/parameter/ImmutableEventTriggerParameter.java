@@ -8,6 +8,10 @@ import java.util.Map;
 public class ImmutableEventTriggerParameter implements EventTriggerParameter {
     private final Map<Integer, Object> params;
 
+    public ImmutableEventTriggerParameter() {
+        this(null);
+    }
+
     @Override
     public <T> T getParameter(Integer index, Class<T> clazz) {
         return clazz.cast(params.get(index));

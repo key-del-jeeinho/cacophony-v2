@@ -6,4 +6,10 @@ import com.cacophony.library.global.trigger.parameter.TriggerParameter;
 public interface FlowRequest<A extends ActionParameter<?>, T extends TriggerParameter<?>> {
     A toActionParameter();
     T toTriggerParameter();
+
+    FlowRequestBuilder<?> builder();
+
+    interface FlowRequestBuilder<T extends FlowRequest<?, ?>> {
+        T build();
+    }
 }
