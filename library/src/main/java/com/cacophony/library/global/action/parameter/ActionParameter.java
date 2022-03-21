@@ -1,4 +1,4 @@
-package com.cacophony.library.global.action;
+package com.cacophony.library.global.action.parameter;
 
 import com.cacophony.library.global.common.Parameter;
 

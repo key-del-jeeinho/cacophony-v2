@@ -1,4 +1,4 @@
-package com.cacophony.library.global.trigger;
+package com.cacophony.library.global.trigger.parameter;
 
 import com.cacophony.library.global.common.Parameter;
 

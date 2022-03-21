@@ -1,11 +1,9 @@
 package com.cacophony.library.domain.event.flow;
 
 import com.cacophony.library.domain.event.action.EventAction;
+import com.cacophony.library.domain.event.flow.request.EventFlowRequest;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
-import com.cacophony.library.global.action.Action;
-import com.cacophony.library.global.flow.FlowRequest;
 import com.cacophony.library.global.flow.exception.UnmodifiableFlowException;
-import com.cacophony.library.global.trigger.Trigger;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

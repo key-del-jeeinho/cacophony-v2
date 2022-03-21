@@ -1,6 +1,6 @@
 package com.cacophony.library.domain.event.action.parameter;
 
-import com.cacophony.library.global.events.Event;
+import com.cacophony.library.domain.event.common.Event;
 import lombok.RequiredArgsConstructor;
 
 import java.util.HashMap;
