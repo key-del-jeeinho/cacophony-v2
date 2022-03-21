@@ -35,7 +35,6 @@ public class ImmutableEventTriggerParameterBuilder implements EventTriggerParame
         final Map<String, Object> params = new HashMap<>();
         params.put("event", event);
         params.put("publishedAt", publishedAt);
-        //TODO build 된 Parameter 는 더이상 수정될 수 없다. 는 ImmutableEventTriggerParameterBuilder 의 책임(역할)과는 동떨어져있는 역할이 아닐까?
-        return new UnmodifiableTriggerParameter(params);
+        return new ImmutableEventTriggerParameter(params);
     }
 }

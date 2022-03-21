@@ -1,6 +1,7 @@
 package com.cacophony.library.domain.event.action.parameter;
 
 import com.cacophony.library.global.action.exception.UnmodifiableActionParameterException;
+import com.cacophony.library.global.common.Parameter;
 
 import java.util.Collections;
 import java.util.Map;
@@ -15,6 +16,11 @@ public class UnmodifiableActionParameter implements EventActionParameter {
     @Override
     public <T> T getParameter(String index, Class<T> clazz) {
         return clazz.cast(params.get(index));
+    }
+
+    @Override
+    public <T> EventActionParameter addParameter(String index, T object) {
+        throw new UnmodifiableActionParameterException("해당 파라미터는 특정 파라미터를 추가할 수 없습니다!");
     }
 
     @Override
