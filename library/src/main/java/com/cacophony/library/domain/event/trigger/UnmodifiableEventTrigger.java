@@ -16,7 +16,7 @@ public class UnmodifiableEventTrigger implements EventTrigger {
     }
 
     @Override
-    public TriggerBuilder<?> builder() {
+    public EventTriggerBuilder builder() {
         throw new UnmodifiableTriggerException("해당 EventTrigger 는 builder 로 수정할 수 없습니다!");
     }
 }

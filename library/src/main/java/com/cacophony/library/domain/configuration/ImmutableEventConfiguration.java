@@ -14,8 +14,8 @@ import com.cacophony.library.domain.event.trigger.ImmutableEventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameterGenerator;
 import com.cacophony.library.domain.event.trigger.parameter.ImmutableEventTriggerParameter;
 
-public class SimpleEventConfiguration extends EventConfiguration {
-    public SimpleEventConfiguration(boolean isGlobalConfiguration) {
+public class ImmutableEventConfiguration extends EventConfiguration {
+    public ImmutableEventConfiguration(boolean isGlobalConfiguration) {
         super(new EventActionGenerator(ImmutableEventAction::new),
                 new EventActionParameterGenerator(ImmutableEventActionParameter::new),
                 new EventFlowGenerator(ImmutableEventFlow::new),
