@@ -1,7 +1,7 @@
 package com.cacophony.library.domain.event.flow.request;
 
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
-import com.cacophony.library.domain.event.common.Event;
+import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 import com.cacophony.library.global.flow.request.FlowRequest;
 

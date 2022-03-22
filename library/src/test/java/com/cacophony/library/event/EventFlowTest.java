@@ -1,9 +1,9 @@
 package com.cacophony.library.event;
 
-import com.cacophony.library.domain.event.common.Event;
-import com.cacophony.library.domain.event.common.ImmutableEventConfiguration;
-import com.cacophony.library.domain.event.common.StandardEventType;
-import com.cacophony.library.domain.event.common.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.data.Event;
+import com.cacophony.library.domain.event.common.configuration.ImmutableEventConfiguration;
+import com.cacophony.library.domain.event.common.data.StandardEventType;
+import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

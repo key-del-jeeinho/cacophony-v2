@@ -1,10 +1,9 @@
-package com.cacophony.library.domain.event.common;
+package com.cacophony.library.domain.event.common.configuration;
 
 import com.cacophony.library.domain.event.action.EventActionGenerator;
 import com.cacophony.library.domain.event.action.ImmutableEventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameterGenerator;
 import com.cacophony.library.domain.event.action.parameter.ImmutableEventActionParameter;
-import com.cacophony.library.domain.event.common.EventConfiguration;
 import com.cacophony.library.domain.event.flow.EventFlowGenerator;
 import com.cacophony.library.domain.event.flow.ImmutableEventFlow;
 import com.cacophony.library.domain.event.flow.request.EventFlowRequestGenerator;

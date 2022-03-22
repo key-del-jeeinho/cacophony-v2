@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.common;
+package com.cacophony.library.domain.event.common.configuration;
 
 import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;

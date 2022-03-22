@@ -2,7 +2,7 @@ package com.cacophony.library.domain.entry.event.builder;
 
 import com.cacophony.library.domain.entry.event.EventFlowEntry;
 import com.cacophony.library.domain.event.action.EventAction;
-import com.cacophony.library.domain.event.common.Event;
+import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 
 import java.util.function.Consumer;

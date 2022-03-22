@@ -1,6 +1,7 @@
 package com.cacophony.library.domain.entry.event;
 
-import com.cacophony.library.domain.event.common.*;
+import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 import lombok.RequiredArgsConstructor;

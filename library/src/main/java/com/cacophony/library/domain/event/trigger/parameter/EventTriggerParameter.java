@@ -1,7 +1,6 @@
 package com.cacophony.library.domain.event.trigger.parameter;
 
-import com.cacophony.library.domain.event.common.Event;
-import com.cacophony.library.global.common.Parameter;
+import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.global.trigger.parameter.TriggerParameter;
 
 import java.time.LocalDateTime;

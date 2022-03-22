@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.common;
+package com.cacophony.library.domain.event.common.data;
 
 public interface EventType {
     default String getName() {
