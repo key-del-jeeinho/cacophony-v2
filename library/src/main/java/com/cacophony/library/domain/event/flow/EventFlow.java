@@ -17,6 +17,6 @@ public interface EventFlow extends Flow<EventFlow.EventFlowBuilder, EventFlowReq
         EventFlowBuilder doAction(EventAction action);
 
         @Override
-        EventFlow complete();
+        EventFlow build();
     }
 }

@@ -27,7 +27,7 @@ public class EventFlowTest {
                                 .builder()
                                 .function(parameter -> System.out.println("테스트 - " + parameter.getParameter("event", Event.class).getType() + " - 입니다"))
                                 .build()
-                ).complete()
+                ).build()
                 .execute(
                         StaticEventConfiguration.generateFlowRequest()
                                 .builder()

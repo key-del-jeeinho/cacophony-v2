@@ -12,6 +12,6 @@ public interface Flow<B extends Flow.FlowBuilder<?, ?>, R extends FlowRequest<?,
     interface FlowBuilder<T extends Trigger<?>, A extends Action<?>> {
         FlowBuilder<T, A> when(T trigger);
         FlowBuilder<T, A> doAction(A action);
-        Flow<?, ?> complete();
+        Flow<?, ?> build();
     }
 }

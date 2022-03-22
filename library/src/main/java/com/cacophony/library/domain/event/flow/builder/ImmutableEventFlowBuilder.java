@@ -26,7 +26,7 @@ public class ImmutableEventFlowBuilder implements EventFlow.EventFlowBuilder {
     }
 
     @Override
-    public EventFlow complete() {
+    public EventFlow build() {
         return new UnmodifiableEventFlow(this.trigger, this.action);
     }
 }
