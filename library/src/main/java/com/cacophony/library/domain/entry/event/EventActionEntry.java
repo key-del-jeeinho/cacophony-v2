@@ -1,9 +1,8 @@
-package com.cacophony.library.domain.event.entry;
+package com.cacophony.library.domain.entry.event;
 
 import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
-import com.cacophony.library.domain.event.common.Event;
-import com.cacophony.library.domain.event.common.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.*;
 import lombok.RequiredArgsConstructor;
 
 import java.util.function.Consumer;
