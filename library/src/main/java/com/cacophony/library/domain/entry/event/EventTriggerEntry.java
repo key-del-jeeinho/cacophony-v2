@@ -12,20 +12,8 @@ import java.util.function.Function;
 public class EventTriggerEntry {
     private final Function<EventTriggerParameter, EventTriggerParameter> function;
 
-    public static <T extends Event> EventTrigger onComplete(Class<T> event) {
+    public static <T extends Event> EventTrigger on(Class<T> event) {
         return complete(first().andThen(then(event)));
-    }
-
-    public static <T extends Event> EventTriggerEntry on(Class<T> event) {
-        return generate(first(), event);
-    }
-
-    public <T extends Event> EventTriggerEntry and(Class<T> event) {
-        return generate(function, event);
-    }
-
-    public EventTrigger complete() {
-        return complete(function);
     }
 
     private static Function<EventTriggerParameter, EventTriggerParameter> first() {
@@ -33,12 +21,9 @@ public class EventTriggerEntry {
     }
 
     private static <T extends Event> Function<EventTriggerParameter, EventTriggerParameter> then(Class<T> event) {
-        return parameter -> {
-            if(parameter.getParameter("isTriggerActivated", Boolean.class)) return parameter;
-            if(event.isInstance(parameter.getParameter("event")))
-                parameter.addParameter("isTriggerActivated", true);
-            return parameter;
-        };
+        return parameter -> parameter.addParameter("isTriggerActivated",
+                parameter.getParameter("isTriggerActivated", Boolean.class)
+                        ||event.isInstance(parameter.getParameter("event")));
     }
 
     private static EventTrigger complete(Function<EventTriggerParameter, EventTriggerParameter> function) {
@@ -46,9 +31,5 @@ public class EventTriggerEntry {
                 .builder()
                 .trigger(function.andThen(parameter -> parameter.getParameter("isTriggerActivated", Boolean.class)))
                 .build();
-    }
-
-    private static <T extends Event> EventTriggerEntry generate(Function<EventTriggerParameter, EventTriggerParameter> origin, Class<T> event) {
-        return new EventTriggerEntry(origin.andThen(then(event)));
     }
 }

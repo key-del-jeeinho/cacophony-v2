@@ -12,34 +12,14 @@ import java.util.function.Consumer;
 public class EventActionEntry {
     private final Consumer<Event> function;
 
-    public static EventAction doActionComplete(Consumer<Event> function) {
-        return complete(function);
-    }
-
-    public static EventActionEntry doAction(Consumer<Event> function) {
-        return generate(function);
-    }
-
-    public EventActionEntry and(Consumer<Event> function) {
-        return generate(this.function.andThen(function));
-    }
-
-    public EventAction complete() {
+    public static EventAction do_(Consumer<Event> function) {
         return complete(function);
     }
 
     private static EventAction complete(Consumer<Event> function) {
         return StaticEventConfiguration.generateAction()
                 .builder()
-                .function(parameter -> function.accept(getEvent(parameter)))
+                .function(parameter -> function.accept(parameter.getParameter("event", Event.class)))
                 .build();
-    }
-
-    private static EventActionEntry generate(Consumer<Event> function) {
-        return new EventActionEntry(function);
-    }
-
-    private static Event getEvent(EventActionParameter parameter) {
-        return parameter.getParameter("event", Event.class);
     }
 }
