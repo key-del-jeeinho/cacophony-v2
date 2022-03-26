@@ -19,7 +19,7 @@ public abstract class EventFlowEntryActionBuilder extends EventFlowEntry {
         }, trigger);
     }
 
-    public <T extends Event> CompletableEventFlowEntryTriggerBuilder when(Class<T> event) {
-        return (CompletableEventFlowEntryTriggerBuilder) generate(parameter -> then(event).check(parameter), action);
+    public <T extends Event> BuildableEventFlowEntryTriggerBuilder when(Class<T> event) {
+        return (BuildableEventFlowEntryTriggerBuilder) generate(parameter -> then(event).check(parameter), action);
     }
 }

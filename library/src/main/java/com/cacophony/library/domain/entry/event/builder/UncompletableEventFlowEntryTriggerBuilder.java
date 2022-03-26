@@ -11,7 +11,7 @@ public class UncompletableEventFlowEntryTriggerBuilder extends EventFlowEntryTri
     }
 
     @Override
-    public EventFlow complete() {
+    public EventFlow build() {
         throw new UncompletableEventFlowEntryException();
     }
 }

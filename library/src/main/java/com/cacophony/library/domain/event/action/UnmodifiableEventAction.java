@@ -1,7 +1,7 @@
 package com.cacophony.library.domain.event.action;
 
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
-import com.cacophony.library.global.action.UnmodifiableActionException;
+import com.cacophony.library.global.action.exception.UnmodifiableActionException;
 import lombok.RequiredArgsConstructor;
 
 import java.util.function.Consumer;

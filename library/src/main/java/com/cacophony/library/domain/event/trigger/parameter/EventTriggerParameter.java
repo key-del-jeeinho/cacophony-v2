@@ -14,6 +14,7 @@ public interface EventTriggerParameter extends TriggerParameter<EventTriggerPara
         EventTriggerParameterBuilder event(Event event);
         EventTriggerParameterBuilder publishedAt(LocalDateTime publishedAt);
 
+        @Override
         EventTriggerParameter build();
     }
 }

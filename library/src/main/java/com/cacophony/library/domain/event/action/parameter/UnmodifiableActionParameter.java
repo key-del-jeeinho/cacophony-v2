@@ -1,7 +1,6 @@
 package com.cacophony.library.domain.event.action.parameter;
 
-import com.cacophony.library.global.action.exception.UnmodifiableActionParameterException;
-import com.cacophony.library.global.common.Parameter;
+import com.cacophony.library.global.action.parameter.exception.UnmodifiableActionParameterException;
 
 import java.util.Collections;
 import java.util.Map;

@@ -1,5 +1,6 @@
 package com.cacophony.library.global.trigger;
 
+import com.cacophony.library.global.Buildable;
 import com.cacophony.library.global.trigger.parameter.TriggerParameter;
 
 public interface Trigger<T extends TriggerParameter<?>> {
@@ -7,7 +8,8 @@ public interface Trigger<T extends TriggerParameter<?>> {
 
     TriggerBuilder<?> builder();
 
-    interface TriggerBuilder<T extends Trigger<?>> {
+    interface TriggerBuilder<T extends Trigger<?>> extends Buildable<T> {
+        @Override
         T build();
     }
 }

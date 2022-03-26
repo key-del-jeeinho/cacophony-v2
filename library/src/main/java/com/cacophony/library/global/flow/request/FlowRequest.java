@@ -1,5 +1,6 @@
 package com.cacophony.library.global.flow.request;
 
+import com.cacophony.library.global.Buildable;
 import com.cacophony.library.global.action.parameter.ActionParameter;
 import com.cacophony.library.global.trigger.parameter.TriggerParameter;
 
@@ -9,7 +10,8 @@ public interface FlowRequest<A extends ActionParameter<?>, T extends TriggerPara
 
     FlowRequestBuilder<?> builder();
 
-    interface FlowRequestBuilder<T extends FlowRequest<?, ?>> {
+    interface FlowRequestBuilder<T extends FlowRequest<?, ?>> extends Buildable<T> {
+        @Override
         T build();
     }
 }

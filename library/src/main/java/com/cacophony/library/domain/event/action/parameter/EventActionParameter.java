@@ -10,6 +10,7 @@ public interface EventActionParameter extends ActionParameter<EventActionParamet
     interface EventActionParameterBuilder extends ActionParameter.ActionParameterBuilder {
         EventActionParameter.EventActionParameterBuilder event(Event event);
 
+        @Override
         EventActionParameter build();
     }
 }

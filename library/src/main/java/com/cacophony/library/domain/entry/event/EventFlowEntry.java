@@ -3,15 +3,12 @@ package com.cacophony.library.domain.entry.event;
 import com.cacophony.library.domain.entry.event.builder.*;
 import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
-import com.cacophony.library.domain.event.common.configuration.ImmutableEventConfiguration;
 import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
-import com.cacophony.library.domain.event.common.data.EventType;
-import com.cacophony.library.domain.event.common.data.StandardEventType;
 import com.cacophony.library.domain.event.flow.EventFlow;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
-import com.cacophony.library.global.Completable;
+import com.cacophony.library.global.Buildable;
 import lombok.RequiredArgsConstructor;
 
 import java.util.function.Consumer;
@@ -20,7 +17,7 @@ import java.util.function.Function;
 @RequiredArgsConstructor
 //on().and().and().doAction().and().and().complete();
 //do_().and().and().when().and().and().complete();
-public abstract class EventFlowEntry implements Completable<EventFlow> {
+public abstract class EventFlowEntry implements Buildable<EventFlow> {
     protected final EventAction action;
     protected final EventTrigger trigger;
 
@@ -45,7 +42,7 @@ public abstract class EventFlowEntry implements Completable<EventFlow> {
                 .builder()
                 .trigger(function)
                 .build();
-        if(trigger != null) return new CompletableEventFlowEntryTriggerBuilder(action, trigger);
+        if(trigger != null) return new BuildableEventFlowEntryTriggerBuilder(action, trigger);
         return new UncompletableEventFlowEntryTriggerBuilder(action, null);
     }
     protected static EventFlowEntryActionBuilder generate(Consumer<EventActionParameter> function, EventTrigger trigger) {
@@ -53,7 +50,7 @@ public abstract class EventFlowEntry implements Completable<EventFlow> {
                 .builder()
                 .function(function)
                 .build();
-        if(trigger != null) return new CompletableEventFlowEntryActionBuilder(action, trigger);
+        if(trigger != null) return new BuildableEventFlowEntryActionBuilder(action, trigger);
         return new UncompletableEventFlowEntryActionBuilder(action, null);
     }
 

@@ -16,7 +16,7 @@ public abstract class EventFlowEntryTriggerBuilder extends EventFlowEntry {
         return generate(parameter -> trigger.check(parameter) || then(event).check(parameter), action);
     }
 
-    public CompletableEventFlowEntryActionBuilder doAction(Consumer<Event> doWhat) {
-        return (CompletableEventFlowEntryActionBuilder) generate(convert().andThen(just(doWhat))::apply, trigger);
+    public BuildableEventFlowEntryActionBuilder doAction(Consumer<Event> doWhat) {
+        return (BuildableEventFlowEntryActionBuilder) generate(convert().andThen(just(doWhat))::apply, trigger);
     }
 }

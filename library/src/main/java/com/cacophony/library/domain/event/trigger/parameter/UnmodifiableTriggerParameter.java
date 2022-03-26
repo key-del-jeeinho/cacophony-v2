@@ -1,7 +1,6 @@
 package com.cacophony.library.domain.event.trigger.parameter;
 
-import com.cacophony.library.global.action.exception.UnmodifiableActionParameterException;
-import com.cacophony.library.global.common.Parameter;
+import com.cacophony.library.global.action.parameter.exception.UnmodifiableActionParameterException;
 import com.cacophony.library.global.trigger.exception.UnmodifiableTriggerParameterException;
 
 import java.util.Collections;

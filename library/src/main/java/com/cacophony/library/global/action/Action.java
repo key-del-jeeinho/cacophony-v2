@@ -1,5 +1,6 @@
 package com.cacophony.library.global.action;
 
+import com.cacophony.library.global.Buildable;
 import com.cacophony.library.global.action.parameter.ActionParameter;
 
 public interface Action<T extends ActionParameter<?>> {
@@ -7,7 +8,8 @@ public interface Action<T extends ActionParameter<?>> {
 
     ActionBuilder<?> builder();
 
-    interface ActionBuilder<T extends Action<?>> {
+    interface ActionBuilder<T extends Action<?>> extends Buildable<T> {
+        @Override
         T build();
     }
 }

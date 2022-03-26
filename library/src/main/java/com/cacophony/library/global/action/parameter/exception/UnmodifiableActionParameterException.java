@@ -1,4 +1,4 @@
-package com.cacophony.library.global.action.exception;
+package com.cacophony.library.global.action.parameter.exception;
 
 import com.cacophony.library.global.common.exception.UnmodifiableException;
 
