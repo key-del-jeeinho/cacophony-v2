@@ -13,7 +13,7 @@ import com.cacophony.library.domain.event.trigger.ImmutableEventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameterGenerator;
 import com.cacophony.library.domain.event.trigger.parameter.ImmutableEventTriggerParameter;
 
-public class ImmutableEventConfiguration extends EventConfiguration {
+public class ImmutableEventConfiguration extends BasicEventConfiguration {
     public ImmutableEventConfiguration(boolean isGlobalConfiguration) {
         super(new EventActionGenerator(ImmutableEventAction::new),
                 new EventActionParameterGenerator(ImmutableEventActionParameter::new),

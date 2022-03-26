@@ -6,6 +6,7 @@ import com.cacophony.library.domain.event.flow.EventFlow;
 import com.cacophony.library.domain.event.flow.request.EventFlowRequest;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
+import com.cacophony.library.global.common.exception.AlreadyInitializedConfigurationException;
 import lombok.Getter;
 
 public class StaticEventConfiguration {
@@ -14,6 +15,7 @@ public class StaticEventConfiguration {
     private static EventConfiguration configuration;
 
     public static void init(EventConfiguration configuration) {
+        if(isInitialized) throw new AlreadyInitializedConfigurationException(StaticEventConfiguration.class);
         StaticEventConfiguration.configuration = configuration;
         isInitialized = true;
     }
