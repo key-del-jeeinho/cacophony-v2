@@ -8,10 +8,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.function.Function;
 
-@RequiredArgsConstructor
+@Deprecated
 public class EventTriggerEntry {
-    private final Function<EventTriggerParameter, EventTriggerParameter> function;
-
     public static <T extends Event> EventTrigger on(Class<T> event) {
         return complete(first().andThen(then(event)));
     }

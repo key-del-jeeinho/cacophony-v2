@@ -19,6 +19,13 @@ public abstract class EventFlowEntryActionBuilder extends EventFlowEntry {
         }, trigger);
     }
 
+    public <T extends Event> EventFlowEntryActionBuilder and(Consumer<T> doWhat, Class<T> clazz) {
+        return generate(parameter -> {
+            action.execute(parameter);
+            convert().andThen(clazz::cast).andThen(just(doWhat)).apply(parameter);
+        }, trigger);
+    }
+
     public <T extends Event> BuildableEventFlowEntryTriggerBuilder when(Class<T> event) {
         return (BuildableEventFlowEntryTriggerBuilder) generate(parameter -> then(event).check(parameter), action);
     }

@@ -27,6 +27,9 @@ public abstract class EventFlowEntry implements Buildable<EventFlow> {
     public static EventFlowEntryActionBuilder do_(Consumer<Event> doWhat) {
         return generate(convert().andThen(just(doWhat))::apply, null);
     }
+    public static <T extends Event> EventFlowEntryActionBuilder do_(Consumer<T> doWhat, Class<T> clazz) {
+        return generate(convert().andThen(clazz::cast).andThen(just(doWhat))::apply, null);
+    }
     protected static Function<EventActionParameter, Event> convert() {
         return parameter -> parameter.getParameter("event", Event.class);
     }
