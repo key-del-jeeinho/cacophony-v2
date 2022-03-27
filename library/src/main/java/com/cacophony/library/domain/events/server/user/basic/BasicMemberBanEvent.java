@@ -6,7 +6,6 @@ import com.cacophony.library.domain.object.server.Server;
 import com.cacophony.library.domain.object.user.User;
 
 public class BasicMemberBanEvent extends BasicMemberEvent {
-
     public BasicMemberBanEvent(Server server, User member) {
         super(server, member, StandardEventOperation.CREATE);
     }
