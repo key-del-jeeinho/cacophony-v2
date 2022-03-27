@@ -10,7 +10,7 @@ public enum StandardEventType implements EventType{
     SERVER_EVENT("server"),
     CHANNEL_EVENT("channel"),
     ROLE_EVENT("role"),
-    EMOTE_EVENT("emote");
+    REACT_EVENT("react");
 
     private final String object;
 
