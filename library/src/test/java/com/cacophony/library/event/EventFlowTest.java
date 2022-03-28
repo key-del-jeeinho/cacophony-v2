@@ -1,10 +1,8 @@
 package com.cacophony.library.event;
 
 import com.cacophony.library.domain.event.common.data.Event;
-import com.cacophony.library.domain.event.common.configuration.ImmutableEventConfiguration;
-import com.cacophony.library.domain.event.common.data.StandardEventType;
+import com.cacophony.library.domain.event.common.configuration.StandardEventConfiguration;
 import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
-import com.cacophony.library.domain.events.channel.basic.BasicChannelCreateEvent;
 import com.cacophony.library.domain.events.channel.basic.server.ServerChannelCreateEvent;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +11,7 @@ import java.time.LocalDateTime;
 public class EventFlowTest {
     @Test
     public void testEventFlow() {
-        ImmutableEventConfiguration configuration = new ImmutableEventConfiguration(true);
+        StandardEventConfiguration configuration = new StandardEventConfiguration(true);
         StaticEventConfiguration.flow()
                 .builder()
                 .when(
