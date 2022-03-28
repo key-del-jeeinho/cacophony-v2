@@ -21,21 +21,21 @@ public class StaticEventConfiguration {
     }
 
     public static EventAction generateAction() {
-        return configuration.generateAction();
+        return configuration.action();
     }
     public static EventActionParameter generateActionParameter() {
-        return configuration.generateActionParameter();
+        return configuration.actionParameter();
     }
     public static EventFlow generateFlow() {
         return configuration.generateFlow();
     }
     public static EventFlowRequest generateFlowRequest() {
-        return configuration.generateFlowRequest();
+        return configuration.flowRequest();
     }
     public static EventTrigger generateTrigger() {
-        return configuration.generateTrigger();
+        return configuration.trigger();
     }
     public static EventTriggerParameter generateTriggerParameter() {
-        return configuration.generateTriggerParameter();
+        return configuration.triggerParameter();
     }
 }

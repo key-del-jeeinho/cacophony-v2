@@ -4,14 +4,19 @@ import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
 import com.cacophony.library.domain.event.flow.EventFlow;
 import com.cacophony.library.domain.event.flow.request.EventFlowRequest;
+import com.cacophony.library.domain.event.publisher.EventPublisher;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 
 public interface EventConfiguration {
-    EventAction generateAction();
-    EventActionParameter generateActionParameter();
+    EventAction action();
+    EventActionParameter actionParameter();
     EventFlow generateFlow();
-    EventFlowRequest generateFlowRequest();
-    EventTrigger generateTrigger();
-    EventTriggerParameter generateTriggerParameter();
+    EventFlowRequest flowRequest();
+    EventTrigger trigger();
+    EventTriggerParameter triggerParameter();
+
+    Event
+
+    EventPublisher
 }

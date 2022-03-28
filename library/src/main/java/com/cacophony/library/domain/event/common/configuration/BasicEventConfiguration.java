@@ -45,11 +45,11 @@ public class BasicEventConfiguration implements EventConfiguration{
     }
 
     @Override
-    public EventAction generateAction() {
+    public EventAction action() {
         return actionGenerator.generateDefault();
     }
     @Override
-    public EventActionParameter generateActionParameter() {
+    public EventActionParameter actionParameter() {
         return actionParameterGenerator.generateDefault();
     }
     @Override
@@ -57,15 +57,15 @@ public class BasicEventConfiguration implements EventConfiguration{
         return flowGenerator.generateDefault();
     }
     @Override
-    public EventFlowRequest generateFlowRequest() {
+    public EventFlowRequest flowRequest() {
         return flowRequestGenerator.generateDefault();
     }
     @Override
-    public EventTrigger generateTrigger() {
+    public EventTrigger trigger() {
         return triggerGenerator.generateDefault();
     }
     @Override
-    public EventTriggerParameter generateTriggerParameter() {
+    public EventTriggerParameter triggerParameter() {
         return triggerParameterGenerator.generateDefault();
     }
 }

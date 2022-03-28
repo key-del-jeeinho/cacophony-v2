@@ -1,7 +1,5 @@
 package com.cacophony.library.domain.event.publisher;
 
-import com.cacophony.library.domain.publisher.PublishData;
-import com.cacophony.library.domain.publisher.Publisher;
 import com.cacophony.library.domain.publisher.SubscrablePublisher;
 import com.cacophony.library.domain.subscriber.Subscriber;
 
