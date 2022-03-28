@@ -3,19 +3,11 @@ package com.cacophony.library.domain.event.publisher;
 import com.cacophony.library.domain.publisher.SubscrablePublisher;
 import com.cacophony.library.domain.subscriber.Subscriber;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class EventPublisher implements SubscrablePublisher<PublishEvent> {
-    List<Subscriber<PublishEvent>> subscribers = new ArrayList<>();
+public abstract class EventPublisher implements SubscrablePublisher<PublishEvent> {
 
     @Override
-    public void publish(PublishEvent data) {
-        subscribers.forEach(subscriber -> subscriber.call(data));
-    }
+    public abstract void publish(PublishEvent data);
 
     @Override
-    public void addSubscriber(Subscriber<PublishEvent> subscriber) {
-        subscribers.add(subscriber);
-    }
+    public abstract void addSubscriber(Subscriber<PublishEvent> subscriber);
 }
