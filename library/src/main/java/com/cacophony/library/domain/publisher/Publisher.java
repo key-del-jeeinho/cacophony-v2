@@ -1,5 +1,5 @@
 package com.cacophony.library.domain.publisher;
 
-public interface Publisher {
-    void publish(PublishData data);
+public interface Publisher<T extends PublishData> {
+    void publish(T data);
 }
