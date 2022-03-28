@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.common.configuration;
+package com.cacophony.library.domain.event.common.manager;
 
 import com.cacophony.library.domain.event.action.EventActionGenerator;
 import com.cacophony.library.domain.event.action.ImmutableEventAction;
@@ -11,15 +11,14 @@ import com.cacophony.library.domain.event.flow.request.ImmutableEventFlowRequest
 import com.cacophony.library.domain.event.publisher.SimpleEventPublisher;
 import com.cacophony.library.domain.event.publisher.SingletonEventPublisherGenerator;
 import com.cacophony.library.domain.event.subscriber.EventSubscriberGenerator;
-import com.cacophony.library.domain.event.subscriber.FlowEventSubscriber;
 import com.cacophony.library.domain.event.subscriber.ImmutableFlowEventSubscriber;
 import com.cacophony.library.domain.event.trigger.EventTriggerGenerator;
 import com.cacophony.library.domain.event.trigger.ImmutableEventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameterGenerator;
 import com.cacophony.library.domain.event.trigger.parameter.ImmutableEventTriggerParameter;
 
-public class StandardEventConfiguration extends BasicEventConfiguration {
-    public StandardEventConfiguration(boolean isGlobalConfiguration) {
+public class StandardEventManager extends BasicEventManager {
+    public StandardEventManager(boolean isGlobalConfiguration) {
         super(new EventActionGenerator(ImmutableEventAction::new),
                 new EventActionParameterGenerator(ImmutableEventActionParameter::new),
                 new EventFlowGenerator(ImmutableEventFlow::new),

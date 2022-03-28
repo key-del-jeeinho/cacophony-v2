@@ -2,7 +2,7 @@ package com.cacophony.library.domain.event.flow.request;
 
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
 import com.cacophony.library.domain.event.common.data.Event;
-import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.manager.StaticEventManager;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 import com.cacophony.library.global.flow.request.exception.UnmodifiableFlowRequestException;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ public class UnmodifiableEventFlowRequest implements EventFlowRequest {
 
     @Override
     public EventActionParameter toActionParameter() {
-        return StaticEventConfiguration
+        return StaticEventManager
                 .actionParameter()
                 .builder()
                 .event(event)
@@ -25,7 +25,7 @@ public class UnmodifiableEventFlowRequest implements EventFlowRequest {
 
     @Override
     public EventTriggerParameter toTriggerParameter() {
-        return StaticEventConfiguration
+        return StaticEventManager
                 .triggerParameter()
                 .builder()
                 .event(event)

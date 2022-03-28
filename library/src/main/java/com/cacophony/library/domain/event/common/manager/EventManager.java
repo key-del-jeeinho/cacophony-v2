@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.common.configuration;
+package com.cacophony.library.domain.event.common.manager;
 
 import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
@@ -9,7 +9,7 @@ import com.cacophony.library.domain.event.subscriber.EventSubscriber;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 
-public interface EventConfiguration {
+public interface EventManager {
     EventAction action();
     EventActionParameter actionParameter();
     EventFlow generateFlow();

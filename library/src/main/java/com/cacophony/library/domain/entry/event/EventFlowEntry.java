@@ -4,7 +4,7 @@ import com.cacophony.library.domain.entry.event.builder.*;
 import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
 import com.cacophony.library.domain.event.common.data.Event;
-import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.manager.StaticEventManager;
 import com.cacophony.library.domain.event.flow.EventFlow;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
@@ -34,14 +34,14 @@ public abstract class EventFlowEntry implements Buildable<EventFlow> {
         return parameter -> parameter.getParameter("event", Event.class);
     }
     protected static <T extends Event> EventTrigger then(Class<T> event) {
-        return StaticEventConfiguration.trigger()
+        return StaticEventManager.trigger()
                 .builder()
                 .trigger(parameter -> event.isInstance(parameter.getParameter("event", Event.class)))
                 .build();
     }
 
     protected static EventFlowEntryTriggerBuilder generate(Function<EventTriggerParameter, Boolean> function, EventAction action) {
-        EventTrigger trigger = StaticEventConfiguration.trigger()
+        EventTrigger trigger = StaticEventManager.trigger()
                 .builder()
                 .trigger(function)
                 .build();
@@ -49,7 +49,7 @@ public abstract class EventFlowEntry implements Buildable<EventFlow> {
         return new UncompletableEventFlowEntryTriggerBuilder(action, null);
     }
     protected static EventFlowEntryActionBuilder generate(Consumer<EventActionParameter> function, EventTrigger trigger) {
-        EventAction action = StaticEventConfiguration.action()
+        EventAction action = StaticEventManager.action()
                 .builder()
                 .function(function)
                 .build();

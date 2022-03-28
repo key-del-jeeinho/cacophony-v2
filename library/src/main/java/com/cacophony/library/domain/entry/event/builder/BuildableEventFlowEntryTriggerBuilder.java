@@ -1,7 +1,7 @@
 package com.cacophony.library.domain.entry.event.builder;
 
 import com.cacophony.library.domain.event.action.EventAction;
-import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.manager.StaticEventManager;
 import com.cacophony.library.domain.event.flow.EventFlow;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 
@@ -12,7 +12,7 @@ public class BuildableEventFlowEntryTriggerBuilder extends EventFlowEntryTrigger
 
     @Override
     public EventFlow build() {
-        return StaticEventConfiguration.flow()
+        return StaticEventManager.flow()
                 .builder()
                 .when(trigger)
                 .doAction(action)

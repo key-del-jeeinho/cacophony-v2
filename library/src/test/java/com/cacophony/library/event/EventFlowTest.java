@@ -1,8 +1,8 @@
 package com.cacophony.library.event;
 
 import com.cacophony.library.domain.event.common.data.Event;
-import com.cacophony.library.domain.event.common.configuration.StandardEventConfiguration;
-import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.manager.StandardEventManager;
+import com.cacophony.library.domain.event.common.manager.StaticEventManager;
 import com.cacophony.library.domain.events.channel.basic.server.ServerChannelCreateEvent;
 import org.junit.jupiter.api.Test;
 
@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 public class EventFlowTest {
     @Test
     public void testEventFlow() {
-        StandardEventConfiguration configuration = new StandardEventConfiguration(true);
-        StaticEventConfiguration.flow()
+        StandardEventManager configuration = new StandardEventManager(true);
+        StaticEventManager.flow()
                 .builder()
                 .when(
-                        StaticEventConfiguration.trigger()
+                        StaticEventManager.trigger()
                                 .builder()
                                 .trigger(parameter -> {
                                     System.out.println(parameter.getParameter("publishedAt", LocalDateTime.class));
@@ -23,13 +23,13 @@ public class EventFlowTest {
                                 })
                                 .build()
                 ).doAction(
-                        StaticEventConfiguration.action()
+                        StaticEventManager.action()
                                 .builder()
                                 .function(parameter -> System.out.println("테스트 - " + parameter.getParameter("event", Event.class).getType() + " - 입니다"))
                                 .build()
                 ).build()
                 .execute(
-                        StaticEventConfiguration.flowRequest()
+                        StaticEventManager.flowRequest()
                                 .builder()
                                 .event(new ServerChannelCreateEvent(()->23L))
                                 .publishedAt(LocalDateTime.now())

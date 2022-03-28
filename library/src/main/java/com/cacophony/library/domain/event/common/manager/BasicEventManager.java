@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.common.configuration;
+package com.cacophony.library.domain.event.common.manager;
 
 import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.EventActionGenerator;
@@ -17,7 +17,7 @@ import com.cacophony.library.domain.event.trigger.EventTriggerGenerator;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameterGenerator;
 
-public class BasicEventConfiguration implements EventConfiguration{
+public class BasicEventManager implements EventManager {
     private final EventActionGenerator actionGenerator;
     private final EventActionParameterGenerator actionParameterGenerator;
 
@@ -30,15 +30,15 @@ public class BasicEventConfiguration implements EventConfiguration{
     private final EventPublisherGenerator eventPublisherGenerator;
     private final EventSubscriberGenerator eventSubscriberGenerator;
 
-    public BasicEventConfiguration(EventActionGenerator actionGenerator,
-                                   EventActionParameterGenerator actionParameterGenerator,
-                                   EventFlowGenerator flowGenerator,
-                                   EventFlowRequestGenerator flowRequestGenerator,
-                                   EventTriggerGenerator triggerGenerator,
-                                   EventTriggerParameterGenerator triggerParameterGenerator,
-                                   EventPublisherGenerator eventPublisherGenerator,
-                                   EventSubscriberGenerator eventSubscriberGenerator,
-                                   boolean isGlobalConfiguration) {
+    public BasicEventManager(EventActionGenerator actionGenerator,
+                             EventActionParameterGenerator actionParameterGenerator,
+                             EventFlowGenerator flowGenerator,
+                             EventFlowRequestGenerator flowRequestGenerator,
+                             EventTriggerGenerator triggerGenerator,
+                             EventTriggerParameterGenerator triggerParameterGenerator,
+                             EventPublisherGenerator eventPublisherGenerator,
+                             EventSubscriberGenerator eventSubscriberGenerator,
+                             boolean isGlobalConfiguration) {
         this.actionGenerator = actionGenerator;
         this.actionParameterGenerator = actionParameterGenerator;
         this.flowGenerator = flowGenerator;
@@ -52,7 +52,7 @@ public class BasicEventConfiguration implements EventConfiguration{
     }
 
     private void initStatic() {
-        StaticEventConfiguration.init(this);
+        StaticEventManager.init(this);
     }
 
     @Override

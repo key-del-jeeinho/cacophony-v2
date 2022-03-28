@@ -1,6 +1,6 @@
 package com.cacophony.library.domain.event.subscriber;
 
-import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.manager.StaticEventManager;
 import com.cacophony.library.domain.event.flow.EventFlow;
 import com.cacophony.library.domain.event.flow.request.EventFlowRequest;
 import com.cacophony.library.domain.event.publisher.data.PublishEvent;
@@ -34,7 +34,7 @@ public abstract class FlowEventSubscriber implements EventSubscriber {
     }
 
     private Function<PublishEvent, EventFlowRequest> convert() {
-        return data -> StaticEventConfiguration.flowRequest()
+        return data -> StaticEventManager.flowRequest()
                 .builder()
                 .publishedAt(LocalDateTime.now())
                 .event(data.getData())

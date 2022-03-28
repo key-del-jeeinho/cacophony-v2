@@ -1,6 +1,6 @@
 package com.cacophony.library.domain.entry.event;
 
-import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.event.common.manager.StaticEventManager;
 import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
@@ -24,7 +24,7 @@ public class EventTriggerEntry {
     }
 
     private static EventTrigger complete(Function<EventTriggerParameter, EventTriggerParameter> function) {
-        return StaticEventConfiguration.trigger()
+        return StaticEventManager.trigger()
                 .builder()
                 .trigger(function.andThen(parameter -> parameter.getParameter("isTriggerActivated", Boolean.class)))
                 .build();

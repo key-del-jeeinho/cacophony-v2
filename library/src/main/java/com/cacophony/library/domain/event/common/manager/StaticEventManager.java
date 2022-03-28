@@ -1,4 +1,4 @@
-package com.cacophony.library.domain.event.common.configuration;
+package com.cacophony.library.domain.event.common.manager;
 
 import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
@@ -11,14 +11,14 @@ import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParamete
 import com.cacophony.library.global.common.exception.AlreadyInitializedConfigurationException;
 import lombok.Getter;
 
-public class StaticEventConfiguration {
+public class StaticEventManager {
     @Getter
     private static boolean isInitialized = false;
-    private static EventConfiguration configuration;
+    private static EventManager configuration;
 
-    public static void init(EventConfiguration configuration) {
-        if(isInitialized) throw new AlreadyInitializedConfigurationException(StaticEventConfiguration.class);
-        StaticEventConfiguration.configuration = configuration;
+    public static void init(EventManager configuration) {
+        if(isInitialized) throw new AlreadyInitializedConfigurationException(StaticEventManager.class);
+        StaticEventManager.configuration = configuration;
         isInitialized = true;
     }
 
