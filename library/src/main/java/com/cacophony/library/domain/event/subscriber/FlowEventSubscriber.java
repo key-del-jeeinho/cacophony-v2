@@ -7,17 +7,30 @@ import com.cacophony.library.domain.event.publisher.data.PublishEvent;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
 @RequiredArgsConstructor
-public class FlowEventSubscriber extends EventSubscriber {
+public abstract class FlowEventSubscriber implements EventSubscriber {
     private final EventFlow flow;
+
+    public FlowEventSubscriber() {
+        this(null);
+    }
 
     @Override
     public void call(PublishEvent data) {
         convert().andThen(just(flow::execute)).apply(data);
+    }
+
+    @Override
+    public abstract FlowEventSubscriberBuilder builder();
+
+    interface FlowEventSubscriberBuilder extends EventSubscriberBuilder {
+        FlowEventSubscriberBuilder flow(EventFlow flow);
+
+        @Override
+        FlowEventSubscriber build();
     }
 
     private Function<PublishEvent, EventFlowRequest> convert() {

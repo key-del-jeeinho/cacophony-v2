@@ -9,7 +9,5 @@ public interface Trigger<T extends TriggerParameter<?>> {
     TriggerBuilder<?> builder();
 
     interface TriggerBuilder<T extends Trigger<?>> extends Buildable<T> {
-        @Override
-        T build();
     }
 }
