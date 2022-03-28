@@ -4,6 +4,8 @@ import com.cacophony.library.domain.event.action.EventAction;
 import com.cacophony.library.domain.event.action.parameter.EventActionParameter;
 import com.cacophony.library.domain.event.flow.EventFlow;
 import com.cacophony.library.domain.event.flow.request.EventFlowRequest;
+import com.cacophony.library.domain.event.publisher.EventPublisher;
+import com.cacophony.library.domain.event.subscriber.EventSubscriber;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 import com.cacophony.library.global.common.exception.AlreadyInitializedConfigurationException;
@@ -37,5 +39,11 @@ public class StaticEventConfiguration {
     }
     public static EventTriggerParameter triggerParameter() {
         return configuration.triggerParameter();
+    }
+    public static EventPublisher publisher() {
+        return configuration.publisher();
+    }
+    public static EventSubscriber subscriber() {
+        return configuration.subscriber();
     }
 }
