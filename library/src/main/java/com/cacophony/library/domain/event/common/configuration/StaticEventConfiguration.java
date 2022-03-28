@@ -20,22 +20,22 @@ public class StaticEventConfiguration {
         isInitialized = true;
     }
 
-    public static EventAction generateAction() {
+    public static EventAction action() {
         return configuration.action();
     }
-    public static EventActionParameter generateActionParameter() {
+    public static EventActionParameter actionParameter() {
         return configuration.actionParameter();
     }
-    public static EventFlow generateFlow() {
+    public static EventFlow flow() {
         return configuration.generateFlow();
     }
-    public static EventFlowRequest generateFlowRequest() {
+    public static EventFlowRequest flowRequest() {
         return configuration.flowRequest();
     }
-    public static EventTrigger generateTrigger() {
+    public static EventTrigger trigger() {
         return configuration.trigger();
     }
-    public static EventTriggerParameter generateTriggerParameter() {
+    public static EventTriggerParameter triggerParameter() {
         return configuration.triggerParameter();
     }
 }

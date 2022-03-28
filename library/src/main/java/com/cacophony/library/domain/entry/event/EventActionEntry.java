@@ -13,7 +13,7 @@ public class EventActionEntry {
     }
 
     private static EventAction complete(Consumer<Event> function) {
-        return StaticEventConfiguration.generateAction()
+        return StaticEventConfiguration.action()
                 .builder()
                 .function(parameter -> function.accept(parameter.getParameter("event", Event.class)))
                 .build();

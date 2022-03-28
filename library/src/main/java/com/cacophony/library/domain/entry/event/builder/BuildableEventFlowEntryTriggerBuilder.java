@@ -12,7 +12,7 @@ public class BuildableEventFlowEntryTriggerBuilder extends EventFlowEntryTrigger
 
     @Override
     public EventFlow build() {
-        return StaticEventConfiguration.generateFlow()
+        return StaticEventConfiguration.flow()
                 .builder()
                 .when(trigger)
                 .doAction(action)

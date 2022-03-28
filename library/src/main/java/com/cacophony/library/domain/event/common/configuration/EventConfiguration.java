@@ -15,8 +15,4 @@ public interface EventConfiguration {
     EventFlowRequest flowRequest();
     EventTrigger trigger();
     EventTriggerParameter triggerParameter();
-
-    Event
-
-    EventPublisher
 }

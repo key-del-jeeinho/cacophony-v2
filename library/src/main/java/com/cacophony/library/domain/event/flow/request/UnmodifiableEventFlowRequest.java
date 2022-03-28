@@ -17,7 +17,7 @@ public class UnmodifiableEventFlowRequest implements EventFlowRequest {
     @Override
     public EventActionParameter toActionParameter() {
         return StaticEventConfiguration
-                .generateActionParameter()
+                .actionParameter()
                 .builder()
                 .event(event)
                 .build();
@@ -26,7 +26,7 @@ public class UnmodifiableEventFlowRequest implements EventFlowRequest {
     @Override
     public EventTriggerParameter toTriggerParameter() {
         return StaticEventConfiguration
-                .generateTriggerParameter()
+                .triggerParameter()
                 .builder()
                 .event(event)
                 .publishedAt(publishedAt)

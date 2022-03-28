@@ -34,14 +34,14 @@ public abstract class EventFlowEntry implements Buildable<EventFlow> {
         return parameter -> parameter.getParameter("event", Event.class);
     }
     protected static <T extends Event> EventTrigger then(Class<T> event) {
-        return StaticEventConfiguration.generateTrigger()
+        return StaticEventConfiguration.trigger()
                 .builder()
                 .trigger(parameter -> event.isInstance(parameter.getParameter("event", Event.class)))
                 .build();
     }
 
     protected static EventFlowEntryTriggerBuilder generate(Function<EventTriggerParameter, Boolean> function, EventAction action) {
-        EventTrigger trigger = StaticEventConfiguration.generateTrigger()
+        EventTrigger trigger = StaticEventConfiguration.trigger()
                 .builder()
                 .trigger(function)
                 .build();
@@ -49,7 +49,7 @@ public abstract class EventFlowEntry implements Buildable<EventFlow> {
         return new UncompletableEventFlowEntryTriggerBuilder(action, null);
     }
     protected static EventFlowEntryActionBuilder generate(Consumer<EventActionParameter> function, EventTrigger trigger) {
-        EventAction action = StaticEventConfiguration.generateAction()
+        EventAction action = StaticEventConfiguration.action()
                 .builder()
                 .function(function)
                 .build();

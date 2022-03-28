@@ -4,6 +4,8 @@ import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.domain.event.common.configuration.ImmutableEventConfiguration;
 import com.cacophony.library.domain.event.common.data.StandardEventType;
 import com.cacophony.library.domain.event.common.configuration.StaticEventConfiguration;
+import com.cacophony.library.domain.events.channel.basic.BasicChannelCreateEvent;
+import com.cacophony.library.domain.events.channel.basic.server.ServerChannelCreateEvent;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -12,10 +14,10 @@ public class EventFlowTest {
     @Test
     public void testEventFlow() {
         ImmutableEventConfiguration configuration = new ImmutableEventConfiguration(true);
-        StaticEventConfiguration.generateFlow()
+        StaticEventConfiguration.flow()
                 .builder()
                 .when(
-                        StaticEventConfiguration.generateTrigger()
+                        StaticEventConfiguration.trigger()
                                 .builder()
                                 .trigger(parameter -> {
                                     System.out.println(parameter.getParameter("publishedAt", LocalDateTime.class));
@@ -23,15 +25,15 @@ public class EventFlowTest {
                                 })
                                 .build()
                 ).doAction(
-                        StaticEventConfiguration.generateAction()
+                        StaticEventConfiguration.action()
                                 .builder()
                                 .function(parameter -> System.out.println("테스트 - " + parameter.getParameter("event", Event.class).getType() + " - 입니다"))
                                 .build()
                 ).build()
                 .execute(
-                        StaticEventConfiguration.generateFlowRequest()
+                        StaticEventConfiguration.flowRequest()
                                 .builder()
-                                .event(() -> StandardEventType.BOT_EVENT)
+                                .event(new ServerChannelCreateEvent(()->23L))
                                 .publishedAt(LocalDateTime.now())
                                 .build()
                 );

@@ -4,7 +4,6 @@ import com.cacophony.library.domain.event.common.configuration.StaticEventConfig
 import com.cacophony.library.domain.event.common.data.Event;
 import com.cacophony.library.domain.event.trigger.EventTrigger;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
-import lombok.RequiredArgsConstructor;
 
 import java.util.function.Function;
 
@@ -25,7 +24,7 @@ public class EventTriggerEntry {
     }
 
     private static EventTrigger complete(Function<EventTriggerParameter, EventTriggerParameter> function) {
-        return StaticEventConfiguration.generateTrigger()
+        return StaticEventConfiguration.trigger()
                 .builder()
                 .trigger(function.andThen(parameter -> parameter.getParameter("isTriggerActivated", Boolean.class)))
                 .build();
