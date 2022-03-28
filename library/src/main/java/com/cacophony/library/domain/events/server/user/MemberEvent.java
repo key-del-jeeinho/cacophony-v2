@@ -3,7 +3,7 @@ package com.cacophony.library.domain.events.server.user;
 import com.cacophony.library.domain.event.common.data.EventType;
 import com.cacophony.library.domain.event.common.data.StandardEventType;
 import com.cacophony.library.domain.events.server.ServerEvent;
-import com.cacophony.library.domain.object.user.User;
+import com.cacophony.library.global.object.user.User;
 
 public abstract class MemberEvent extends ServerEvent {
     @Override

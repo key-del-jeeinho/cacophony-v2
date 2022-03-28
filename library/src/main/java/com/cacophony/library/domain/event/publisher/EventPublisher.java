@@ -1,13 +1,12 @@
 package com.cacophony.library.domain.event.publisher;
 
-import com.cacophony.library.domain.publisher.SubscrablePublisher;
-import com.cacophony.library.domain.subscriber.Subscriber;
+import com.cacophony.library.domain.event.publisher.data.PublishEvent;
+import com.cacophony.library.global.publisher.subscriber.SubscrablePublisher;
+import com.cacophony.library.global.subscriber.Subscriber;
 
-public abstract class EventPublisher implements SubscrablePublisher<PublishEvent> {
-
+public interface EventPublisher extends SubscrablePublisher<PublishEvent> {
     @Override
-    public abstract void publish(PublishEvent data);
-
+    void publish(PublishEvent data);
     @Override
-    public abstract void addSubscriber(Subscriber<PublishEvent> subscriber);
+    void addSubscriber(Subscriber<PublishEvent> subscriber);
 }

@@ -1,7 +1,7 @@
 package com.cacophony.library.domain.events.channel;
 
-import com.cacophony.library.domain.object.channel.Channel;
-import com.cacophony.library.domain.object.channel.ChannelType;
+import com.cacophony.library.global.object.channel.Channel;
+import com.cacophony.library.global.object.channel.ChannelType;
 import com.cacophony.library.domain.event.common.data.EventOperation;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

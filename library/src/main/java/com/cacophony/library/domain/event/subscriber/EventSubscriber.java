@@ -1,7 +1,7 @@
 package com.cacophony.library.domain.event.subscriber;
 
-import com.cacophony.library.domain.event.publisher.PublishEvent;
-import com.cacophony.library.domain.subscriber.Subscriber;
+import com.cacophony.library.domain.event.publisher.data.PublishEvent;
+import com.cacophony.library.global.subscriber.Subscriber;
 
 public abstract class EventSubscriber implements Subscriber<PublishEvent> {
     @Override

@@ -1,7 +1,7 @@
-package com.cacophony.library.domain.event.publisher;
+package com.cacophony.library.domain.event.publisher.data;
 
 import com.cacophony.library.domain.event.common.data.Event;
-import com.cacophony.library.domain.publisher.PublishData;
+import com.cacophony.library.global.publisher.data.PublishData;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
