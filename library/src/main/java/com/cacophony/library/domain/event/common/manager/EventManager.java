@@ -16,7 +16,8 @@ public interface EventManager {
     EventFlowRequest flowRequest();
     EventTrigger trigger();
     EventTriggerParameter triggerParameter();
-
     EventPublisher publisher();
     EventSubscriber subscriber();
+
+    void enroll(EventFlow eventFlow);
 }

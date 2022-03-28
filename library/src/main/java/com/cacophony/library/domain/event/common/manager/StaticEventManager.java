@@ -46,4 +46,8 @@ public class StaticEventManager {
     public static EventSubscriber subscriber() {
         return configuration.subscriber();
     }
+
+    public static void enroll(EventFlow eventFlow) {
+        configuration.enroll(eventFlow);
+    }
 }

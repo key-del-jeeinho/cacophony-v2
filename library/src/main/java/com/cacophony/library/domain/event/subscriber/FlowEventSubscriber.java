@@ -26,7 +26,7 @@ public abstract class FlowEventSubscriber implements EventSubscriber {
     @Override
     public abstract FlowEventSubscriberBuilder builder();
 
-    interface FlowEventSubscriberBuilder extends EventSubscriberBuilder {
+    public interface FlowEventSubscriberBuilder extends EventSubscriberBuilder {
         FlowEventSubscriberBuilder flow(EventFlow flow);
 
         @Override

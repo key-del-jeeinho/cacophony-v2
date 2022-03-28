@@ -17,7 +17,7 @@ import com.cacophony.library.domain.event.trigger.EventTriggerGenerator;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameter;
 import com.cacophony.library.domain.event.trigger.parameter.EventTriggerParameterGenerator;
 
-public class BasicEventManager implements EventManager {
+public abstract class BasicEventManager implements EventManager {
     private final EventActionGenerator actionGenerator;
     private final EventActionParameterGenerator actionParameterGenerator;
 
