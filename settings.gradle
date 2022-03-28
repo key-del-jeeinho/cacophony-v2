@@ -3,4 +3,5 @@ include 'library'
 include 'example'
 include 'spring-boot-starter'
 include 'spring-auto-configure'
+include 'jda-connector'
 
